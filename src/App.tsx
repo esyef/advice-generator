@@ -1,7 +1,14 @@
-import React from 'react'
+import { Advice } from './Components'
+import advice from './mocks/advice.json'
 
 const App = () => {
-  return <h1 className='text-3xl font-bold underline'>Hello world!</h1>
+    const data = advice?.slip
+
+    return (
+        <div className='bg-DarkBlue h-screen text-lightCyan grid place-items-center'>
+            <Advice advice={data} />
+        </div>
+    )
 }
 
 export default App

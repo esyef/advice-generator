@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.divider {
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: url(./assets/images/pattern-divider-mobile.svg);
+}
+
+@media screen and (min-width: 1024px) {
+    .divider {
+        background-image: url(./assets/images/pattern-divider-desktop.svg);
+    }
+}
