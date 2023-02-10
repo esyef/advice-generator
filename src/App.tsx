@@ -1,12 +1,20 @@
 import { Advice } from './Components'
-import advice from './mocks/advice.json'
+import { useAdvice } from './hooks/useAdvoice'
 
 const App = () => {
-    const data = advice?.slip
+    const { data, getAdvice } = useAdvice()
 
     return (
         <div className='bg-DarkBlue h-screen text-lightCyan grid place-items-center'>
-            <Advice advice={data} />
+            <Advice
+                advice={{
+                    slip: {
+                        id: data?.slip.id!,
+                        advice: data?.slip.advice!,
+                    },
+                }}
+                onClick={getAdvice}
+            />
         </div>
     )
 }
